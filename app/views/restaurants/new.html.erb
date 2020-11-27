@@ -1,12 +1,15 @@
 <div class="container">
-  <H1>NEW RESTAURANT</H1>
-  
+  <h1>New restaurant</h1>
+  <p>Fill the form to insert a new restaurant to the catalog</p>
+
   <%= simple_form_for(@restaurant) do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :phone_number %>
-    <%= f.input :category %>
-    <%= f.submit "Save restaurant", class: "btn btn-primary"%>
+    <%= f.input :category, collection: %w[chinese italian japanese french belgian] %>
+    <div class="d-flex justify-content-between">
+      <%= f.submit "Save", class: "btn btn-primary"%>
+      <%= link_to '+ Back to restaurants list', restaurants_path, class: "btn btn-outline-primary" %>
+    </div>
   <% end %>
-  
 </div>

@@ -1,9 +1,12 @@
 <div class="container">
-  <h2>VIEW DA INDEX DO RESTAURANTS</h2>
+  <h1>Restaurants Available</h1> 
   
-  <% @restaurants.each do |restaurant| %>
-  <li><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></li>
-  <% end %>
-  
-  <%= link_to '+ Add a restaurant', '/restaurants/new' %>
+  <ul class="list-unstyled  ml-3">
+    <% @restaurants.each do |restaurant| %>
+    <li class="my-3"><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to '+ Add a restaurant', '/restaurants/new', class: "btn btn-primary" %>
+
 </div>
